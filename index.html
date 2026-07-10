@@ -251,7 +251,7 @@ footer .display{color:var(--gold-2);letter-spacing:.24em;font-size:.75rem}
     <section id="partidos">
       <div class="section-head">
         <h2>Fixture básquet</h2>
-        <span class="when">3 fechas · un libre por grupo en cada fecha</span>
+        <span class="when">4 tandas · 3 canchas por tanda</span>
       </div>
       <div data-matches></div>
     </section>
@@ -299,23 +299,25 @@ const DATA = {
       "Grupo D": [{name:"CARAHUE A"}, {name:"MALEN"}, {name:"CHAPELCO B"}]
     },
     rounds: [
-      {name:"1° Fecha", matches:[
-        {court:"1", group:"Grupo A", team1:"IVYRAY", team2:"LLAHUE", free:"CARAHUE B"},
-        {court:"2", group:"Grupo B", team1:"CURA", team2:"CHAMPAQUI", free:"MAVUL B"},
-        {court:"3", group:"Grupo C", team1:"CHAPELCO A", team2:"LIHUE", free:"MAVUL A"},
-        {court:"1", group:"Grupo D", team1:"CARAHUE A", team2:"MALEN", free:"CHAPELCO B"}
+      {name:"Tanda 1", matches:[
+        {court:"1", date:"1° Fecha", group:"Grupo A", team1:"IVYRAY", team2:"LLAHUE", free:"CARAHUE B"},
+        {court:"2", date:"1° Fecha", group:"Grupo B", team1:"CURA", team2:"CHAMPAQUI", free:"MAVUL B"},
+        {court:"3", date:"1° Fecha", group:"Grupo C", team1:"CHAPELCO A", team2:"LIHUE", free:"MAVUL A"}
       ]},
-      {name:"2° Fecha", matches:[
-        {court:"1", group:"Grupo A", team1:"CARAHUE B", team2:"IVYRAY", free:"LLAHUE"},
-        {court:"2", group:"Grupo B", team1:"MAVUL B", team2:"CURA", free:"CHAMPAQUI"},
-        {court:"3", group:"Grupo C", team1:"MAVUL A", team2:"CHAPELCO A", free:"LIHUE"},
-        {court:"1", group:"Grupo D", team1:"MALEN", team2:"CHAPELCO B", free:"CARAHUE A"}
+      {name:"Tanda 2", matches:[
+        {court:"1", date:"1° Fecha", group:"Grupo D", team1:"CARAHUE A", team2:"MALEN", free:"CHAPELCO B"},
+        {court:"2", date:"2° Fecha", group:"Grupo A", team1:"CARAHUE B", team2:"IVYRAY", free:"LLAHUE"},
+        {court:"3", date:"2° Fecha", group:"Grupo B", team1:"MAVUL B", team2:"CURA", free:"CHAMPAQUI"}
       ]},
-      {name:"3° Fecha", matches:[
-        {court:"1", group:"Grupo A", team1:"LLAHUE", team2:"CARAHUE B", free:"IVYRAY"},
-        {court:"2", group:"Grupo B", team1:"CHAMPAQUI", team2:"MAVUL B", free:"CURA"},
-        {court:"3", group:"Grupo C", team1:"LIHUE", team2:"MAVUL A", free:"CHAPELCO A"},
-        {court:"1", group:"Grupo D", team1:"CHAPELCO B", team2:"CARAHUE A", free:"MALEN"}
+      {name:"Tanda 3", matches:[
+        {court:"1", date:"2° Fecha", group:"Grupo C", team1:"MAVUL A", team2:"CHAPELCO A", free:"LIHUE"},
+        {court:"2", date:"2° Fecha", group:"Grupo D", team1:"MALEN", team2:"CHAPELCO B", free:"CARAHUE A"},
+        {court:"3", date:"3° Fecha", group:"Grupo A", team1:"LLAHUE", team2:"CARAHUE B", free:"IVYRAY"}
+      ]},
+      {name:"Tanda 4", matches:[
+        {court:"1", date:"3° Fecha", group:"Grupo B", team1:"CHAMPAQUI", team2:"MAVUL B", free:"CURA"},
+        {court:"2", date:"3° Fecha", group:"Grupo C", team1:"LIHUE", team2:"MAVUL A", free:"CHAPELCO A"},
+        {court:"3", date:"3° Fecha", group:"Grupo D", team1:"CHAPELCO B", team2:"CARAHUE A", free:"MALEN"}
       ]}
     ],
     finals: [
@@ -415,7 +417,7 @@ function renderMatches(root, rounds){
               <span class="vs">vs</span>
               <span class="t">${match.team2}</span>
             </div>
-            <div class="grp-tag">${match.group}</div>
+            <div class="grp-tag">${match.date ? `${match.date} · ` : ""}${match.group}</div>
             ${match.free ? `<div class="free-tag">Libre: ${match.free}</div>` : ""}
           </div>
         `).join("")}
