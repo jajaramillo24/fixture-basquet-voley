@@ -135,7 +135,6 @@ section{margin-bottom:66px}
 }
 .group-card li{list-style:none;padding:4px 0;color:var(--mint-strong);font-size:.96rem;border-top:1px dashed var(--line);display:flex;justify-content:space-between;gap:12px}
 .group-card li:first-of-type{border-top:none}
-.pts{color:var(--gold-1);font-family:"Archivo",sans-serif;font-size:.72rem;font-stretch:85%}
 .fecha-block{margin-bottom:32px}
 .fecha-block h3{
   font-family:"Archivo",sans-serif;font-stretch:85%;font-weight:800;text-transform:uppercase;
@@ -294,7 +293,7 @@ const DATA = {
   basquet: {
     label: "Básquet",
     groups: {
-      "Grupo A": [{name:"IVYRAY", pts:"0"}, {name:"LLAHUE", pts:"6"}, {name:"CARAHUE B"}],
+      "Grupo A": [{name:"IVYRAY"}, {name:"LLAHUE"}, {name:"CARAHUE B"}],
       "Grupo B": [{name:"CURA"}, {name:"CHAMPAQUI"}, {name:"MAVUL B"}],
       "Grupo C": [{name:"CHAPELCO A"}, {name:"MAVUL A"}, {name:"LIHUE"}],
       "Grupo D": [{name:"CARAHUE A"}, {name:"MALEN"}, {name:"CHAPELCO B"}]
@@ -398,7 +397,7 @@ function renderGroups(root, groups){
   root.innerHTML = Object.entries(groups).map(([group, teams]) => `
     <div class="group-card">
       <h3>${group}</h3>
-      <ul>${teams.map(team => `<li><span>${team.name}</span>${team.pts ? `<span class="pts">${team.pts} pts</span>` : ""}</li>`).join("")}</ul>
+      <ul>${teams.map(team => `<li><span>${team.name}</span></li>`).join("")}</ul>
     </div>
   `).join("");
 }
