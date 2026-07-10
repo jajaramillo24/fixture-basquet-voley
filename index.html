@@ -56,14 +56,11 @@ header::before{
   opacity:.42;
 }
 .badge{
-  width:92px;height:104px;margin:0 auto 22px;
+  width:156px;height:156px;margin:0 auto 20px;
   display:flex;align-items:center;justify-content:center;
-  background:linear-gradient(180deg,#8FB9AA,#6E9E8D);
-  clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
-  color:var(--pine-deep);
   position:relative;
 }
-.badge svg{width:58px;height:58px}
+.badge img{width:100%;height:100%;object-fit:contain;display:block}
 .eyebrow{
   font-family:"Archivo",sans-serif;font-stretch:85%;
   letter-spacing:.32em;text-transform:uppercase;
@@ -187,6 +184,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 20px;colo
 footer .display{color:var(--gold-2);letter-spacing:.24em;font-size:.75rem}
 @media (max-width:640px){
   header{padding-top:44px}
+  .badge{width:132px;height:132px}
   .matches{grid-template-columns:1fr}
   .hero-meta{gap:13px}
   .section-head{display:block}
@@ -203,12 +201,8 @@ footer .display{color:var(--gold-2);letter-spacing:.24em;font-size:.75rem}
 </head>
 <body>
 <header>
-  <div class="badge" aria-hidden="true">
-    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="25" cy="28" r="16" stroke="#0E3527" stroke-width="4"/>
-      <path d="M10 28h30M25 12c5 7 5 25 0 32M25 12c-5 7-5 25 0 32" stroke="#0E3527" stroke-width="3"/>
-      <path d="M44 18h10v22H44M44 24h10M44 34h10" stroke="#C79A2E" stroke-width="4" stroke-linecap="round"/>
-    </svg>
+  <div class="badge">
+    <img src="logo-olimpiadas-cid-campeador.png" alt="Olimpiadas Cid Campeador 10 años">
   </div>
   <p class="eyebrow">Olimpiadas Cid Campeador · 10 años</p>
   <h1 class="display">Básquet · Vóley</h1>
