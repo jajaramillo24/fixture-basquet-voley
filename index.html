@@ -301,22 +301,22 @@ const DATA = {
     },
     rounds: [
       {name:"1° Fecha", matches:[
-        {group:"Grupo A", team1:"IVYRAY", team2:"LLAHUE", free:"CARAHUE B"},
-        {group:"Grupo B", team1:"CURA", team2:"CHAMPAQUI", free:"MAVUL B"},
-        {group:"Grupo C", team1:"CHAPELCO A", team2:"LIHUE", free:"MAVUL A"},
-        {group:"Grupo D", team1:"CARAHUE A", team2:"MALEN", free:"CHAPELCO B"}
+        {court:"1", group:"Grupo A", team1:"IVYRAY", team2:"LLAHUE", free:"CARAHUE B"},
+        {court:"2", group:"Grupo B", team1:"CURA", team2:"CHAMPAQUI", free:"MAVUL B"},
+        {court:"3", group:"Grupo C", team1:"CHAPELCO A", team2:"LIHUE", free:"MAVUL A"},
+        {court:"1", group:"Grupo D", team1:"CARAHUE A", team2:"MALEN", free:"CHAPELCO B"}
       ]},
       {name:"2° Fecha", matches:[
-        {group:"Grupo A", team1:"CARAHUE B", team2:"IVYRAY", free:"LLAHUE"},
-        {group:"Grupo B", team1:"MAVUL B", team2:"CURA", free:"CHAMPAQUI"},
-        {group:"Grupo C", team1:"MAVUL A", team2:"CHAPELCO A", free:"LIHUE"},
-        {group:"Grupo D", team1:"MALEN", team2:"CHAPELCO B", free:"CARAHUE A"}
+        {court:"1", group:"Grupo A", team1:"CARAHUE B", team2:"IVYRAY", free:"LLAHUE"},
+        {court:"2", group:"Grupo B", team1:"MAVUL B", team2:"CURA", free:"CHAMPAQUI"},
+        {court:"3", group:"Grupo C", team1:"MAVUL A", team2:"CHAPELCO A", free:"LIHUE"},
+        {court:"1", group:"Grupo D", team1:"MALEN", team2:"CHAPELCO B", free:"CARAHUE A"}
       ]},
       {name:"3° Fecha", matches:[
-        {group:"Grupo A", team1:"LLAHUE", team2:"CARAHUE B", free:"IVYRAY"},
-        {group:"Grupo B", team1:"CHAMPAQUI", team2:"MAVUL B", free:"CURA"},
-        {group:"Grupo C", team1:"LIHUE", team2:"MAVUL A", free:"CHAPELCO A"},
-        {group:"Grupo D", team1:"CHAPELCO B", team2:"CARAHUE A", free:"MALEN"}
+        {court:"1", group:"Grupo A", team1:"LLAHUE", team2:"CARAHUE B", free:"IVYRAY"},
+        {court:"2", group:"Grupo B", team1:"CHAMPAQUI", team2:"MAVUL B", free:"CURA"},
+        {court:"3", group:"Grupo C", team1:"LIHUE", team2:"MAVUL A", free:"CHAPELCO A"},
+        {court:"1", group:"Grupo D", team1:"CHAPELCO B", team2:"CARAHUE A", free:"MALEN"}
       ]}
     ],
     finals: [
@@ -410,7 +410,7 @@ function renderMatches(root, rounds){
       <div class="matches">
         ${round.matches.map(match => `
           <div class="match" data-teams="${match.team1}|${match.team2}">
-            <div class="court"><span class="n">${match.court || match.group.replace("Grupo ","G")}</span><span class="lbl">${match.court ? "Cancha" : "Grupo"}</span></div>
+            <div class="court"><span class="n">${match.court}</span><span class="lbl">Cancha</span></div>
             <div class="teams">
               <span class="t">${match.team1}</span>
               <span class="vs">vs</span>
