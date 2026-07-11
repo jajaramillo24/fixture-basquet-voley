@@ -197,7 +197,7 @@ footer .display{color:var(--gold-2);letter-spacing:.24em;font-size:.75rem}
     <span><strong>9</strong> equipos</span>
     <span><strong>2</strong> grupos</span>
     <span><strong>3</strong> canchas</span>
-    <span><strong>7</strong> turnos</span>
+    <span><strong>6</strong> turnos</span>
     <span><strong>16</strong> partidos de grupos</span>
   </div>
 </header>
@@ -229,7 +229,7 @@ footer .display{color:var(--gold-2);letter-spacing:.24em;font-size:.75rem}
 <section id="fase-grupos">
   <div class="section-head">
     <h2>Fase de grupos</h2>
-    <span class="when">11:00 a 12:24 hs · 7 turnos de 12 min (2x5)</span>
+    <span class="when">11:00 a 12:12 hs · 6 turnos de 12 min (2x5) · 5 turnos con 3 canchas en simultáneo</span>
   </div>
   <div id="fechas"></div>
 </section>
@@ -267,39 +267,37 @@ const GRUPOS = {
   "Grupo B": ["CHAPELCO","CURA","MAVUL","LETARE"]
 };
 
-const TURNOS = {1:"11:00",2:"11:12",3:"11:24",4:"11:36",5:"11:48",6:"12:00",7:"12:12"};
+const TURNOS = {1:"11:00",2:"11:12",3:"11:24",4:"11:36",5:"11:48",6:"12:00"};
 
 /* [turno, grupo, cancha, equipo1, equipo2] — 3 canchas ocupadas en cada turno */
 const PARTIDOS = [
   /* Turno 1 — 11:00 */
   [1,"A",1,"LLAHUE","ROSARIO"],
   [1,"A",2,"CHOROY","CARAHUE"],
+  [1,"B",3,"CHAPELCO","CURA"],
 
   /* Turno 2 — 11:12 */
-  [2,"A",1,"CHAMPAQUI","ROSARIO"],
-  [2,"B",2,"CHAPELCO","CURA"],
-  [2,"B",3,"MAVUL","LETARE"],
+  [2,"A",1,"CARAHUE","CHAMPAQUI"],
+  [2,"A",2,"CHOROY","LLAHUE"],
+  [2,"B",3,"CHAPELCO","MAVUL"],
 
   /* Turno 3 — 11:24 */
-  [3,"A",1,"CHAMPAQUI","CHOROY"],
-  [3,"A",2,"CARAHUE","LLAHUE"],
+  [3,"A",1,"CARAHUE","LLAHUE"],
+  [3,"A",2,"CHAMPAQUI","CHOROY"],
+  [3,"B",3,"CURA","LETARE"],
 
   /* Turno 4 — 11:36 */
-  [4,"B",1,"CHAPELCO","MAVUL"],
-  [4,"B",2,"CURA","LETARE"],
+  [4,"A",1,"CARAHUE","ROSARIO"],
+  [4,"A",2,"CHAMPAQUI","LLAHUE"],
+  [4,"B",3,"MAVUL","LETARE"],
 
   /* Turno 5 — 11:48 */
-  [5,"A",1,"ROSARIO","CHOROY"],
-  [5,"A",2,"CARAHUE","CHAMPAQUI"],
+  [5,"A",1,"CHAMPAQUI","ROSARIO"],
+  [5,"B",2,"CHAPELCO","LETARE"],
+  [5,"B",3,"CURA","MAVUL"],
 
   /* Turno 6 — 12:00 */
-  [6,"A",1,"CHOROY","LLAHUE"],
-  [6,"B",2,"CHAPELCO","LETARE"],
-  [6,"B",3,"CURA","MAVUL"],
-
-  /* Turno 7 — 12:12 */
-  [7,"A",1,"LLAHUE","CHAMPAQUI"],
-  [7,"A",2,"ROSARIO","CARAHUE"]
+  [6,"A",1,"CHOROY","ROSARIO"]
 ];
 
 /* Grupos */
@@ -313,7 +311,7 @@ for (const [g, teams] of Object.entries(GRUPOS)) {
 
 /* Turnos */
 const fechasEl = document.getElementById('fechas');
-for (const t of [1,2,3,4,5,6,7]) {
+for (const t of [1,2,3,4,5,6]) {
   const block = document.createElement('div');
   block.className = 'fecha-block';
   const matches = PARTIDOS.filter(p=>p[0]===t).sort((a,b)=>a[2]-b[2]);
