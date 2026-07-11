@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Handball Menores · Fixture — Olimpiadas Cid Campeador 2026</title>
+<meta name="description" content="Todos los partidos de handball menores de las Olimpiadas Cid Campeador 2026: fase de grupos y fase final.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..900&family=Zilla+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pine:#0E3527;        /* fondo principal */
+  --pine-deep:#0A2A1F;   /* fondo tarjetas oscuras */
+  --pine-soft:#16442F;   /* tarjetas / filas */
+  --mint:#A9CEC2;        /* texto secundario / slab */
+  --mint-strong:#CDE7DD;
+  --gold-1:#F3DFA0;
+  --gold-2:#D9A93F;
+  --gold-3:#B07E1E;
+  --line:rgba(169,206,194,.18);
+  --ink:#EAF4EF;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--pine);
+  color:var(--ink);
+  font-family:"Zilla Slab",Georgia,serif;
+  font-size:17px;
+  line-height:1.5;
+  background-image:
+    radial-gradient(1200px 600px at 50% -200px, rgba(169,206,194,.07), transparent 70%),
+    repeating-linear-gradient(115deg, rgba(255,255,255,.012) 0 2px, transparent 2px 9px);
+}
+.display{font-family:"Archivo",system-ui,sans-serif;font-stretch:80%;text-transform:uppercase}
+
+/* ---------- HERO ---------- */
+header{
+  text-align:center;
+  padding:64px 20px 44px;
+  border-bottom:1px solid var(--line);
+  position:relative;
+  overflow:hidden;
+}
+.badge{
+  width:156px;height:156px;margin:0 auto 20px;
+  display:flex;align-items:center;justify-content:center;
+}
+.badge img{width:100%;height:100%;object-fit:contain;display:block}
+.eyebrow{
+  font-family:"Archivo",sans-serif;font-stretch:85%;
+  letter-spacing:.32em;text-transform:uppercase;
+  font-size:.72rem;color:var(--mint);
+}
+h1{
+  margin:10px 0 6px;
+  font-size:clamp(3rem,9vw,5.6rem);
+  font-weight:900;line-height:.92;
+  background:linear-gradient(100deg,var(--gold-1) 10%,var(--gold-2) 45%,var(--gold-3) 90%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.subtitle{
+  font-family:"Zilla Slab",serif;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:var(--mint);font-size:clamp(1rem,3vw,1.5rem);
+}
+.hero-meta{
+  margin-top:26px;display:flex;gap:26px;justify-content:center;flex-wrap:wrap;
+  font-size:.85rem;color:var(--mint);
+}
+.hero-meta strong{color:var(--gold-1);font-family:"Archivo",sans-serif;font-stretch:85%;font-weight:700;letter-spacing:.06em}
+
+/* ---------- NAV / FILTRO ---------- */
+.toolbar{
+  position:sticky;top:0;z-index:20;
+  background:rgba(10,42,31,.92);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+  padding:12px 20px;
+}
+.toolbar-inner{max-width:1080px;margin:0 auto;display:flex;gap:14px;align-items:center;flex-wrap:wrap;justify-content:center}
+.toolbar label{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mint);font-family:"Archivo",sans-serif;font-stretch:85%}
+select{
+  background:var(--pine-soft);color:var(--ink);
+  border:1px solid var(--line);border-radius:6px;
+  padding:8px 12px;font-family:"Zilla Slab",serif;font-size:.95rem;
+}
+select:focus-visible{outline:2px solid var(--gold-2);outline-offset:2px}
+.jump{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.jump a{
+  color:var(--mint);text-decoration:none;font-size:.78rem;
+  font-family:"Archivo",sans-serif;font-stretch:85%;letter-spacing:.12em;text-transform:uppercase;
+  padding:8px 12px;border:1px solid var(--line);border-radius:999px;
+}
+.jump a:hover,.jump a:focus-visible{color:var(--gold-1);border-color:var(--gold-2);outline:none}
+
+/* ---------- LAYOUT ---------- */
+main{max-width:1080px;margin:0 auto;padding:48px 20px 90px}
+section{margin-bottom:72px}
+.section-head{display:flex;align-items:baseline;gap:16px;border-bottom:2px solid var(--gold-2);padding-bottom:10px;margin-bottom:28px}
+.section-head h2{
+  font-family:"Archivo",sans-serif;font-stretch:80%;font-weight:900;
+  text-transform:uppercase;font-size:clamp(1.5rem,4vw,2.2rem);color:var(--gold-1);
+}
+.section-head .when{margin-left:auto;color:var(--mint);font-size:.85rem;letter-spacing:.08em}
+
+/* ---------- GRUPOS ---------- */
+.groups{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-bottom:34px}
+.group-card{background:var(--pine-soft);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.group-card h3{
+  font-family:"Archivo",sans-serif;font-stretch:85%;font-weight:800;text-transform:uppercase;
+  font-size:.8rem;letter-spacing:.24em;color:var(--gold-2);margin-bottom:8px;
+}
+.group-card li{list-style:none;padding:3px 0;color:var(--mint-strong);font-size:.95rem;border-top:1px dashed var(--line)}
+.group-card li:first-of-type{border-top:none}
+
+/* ---------- FECHAS Y PARTIDOS ---------- */
+.fecha-block{margin-bottom:34px}
+.fecha-block h3{
+  font-family:"Archivo",sans-serif;font-stretch:85%;font-weight:800;text-transform:uppercase;
+  letter-spacing:.2em;font-size:.95rem;color:var(--mint);
+  display:flex;align-items:center;gap:12px;margin-bottom:14px;
+}
+.fecha-block h3::after{content:"";flex:1;height:1px;background:var(--line)}
+.matches{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.match{
+  display:grid;grid-template-columns:auto 1fr;gap:0;
+  background:var(--pine-deep);border:1px solid var(--line);border-radius:10px;overflow:hidden;
+  transition:border-color .15s;
+}
+.match:hover{border-color:var(--gold-3)}
+.cancha{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:10px 12px;min-width:66px;
+  background:linear-gradient(180deg,rgba(217,169,63,.16),rgba(217,169,63,.05));
+  border-right:1px solid var(--line);
+}
+.cancha .n{font-family:"Archivo",sans-serif;font-weight:900;font-size:1.5rem;color:var(--gold-1);line-height:1}
+.cancha .lbl{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--mint);margin-top:3px;font-family:"Archivo",sans-serif;font-stretch:85%}
+.teams{padding:10px 16px;display:flex;flex-direction:column;justify-content:center;gap:2px}
+.teams .t{font-weight:600;font-size:1.02rem;color:var(--ink)}
+.teams .vs{font-family:"Archivo",sans-serif;font-stretch:85%;font-size:.65rem;letter-spacing:.3em;color:var(--gold-2);text-transform:uppercase}
+.match .grp-tag{grid-column:1/-1;border-top:1px dashed var(--line);padding:5px 16px;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mint);font-family:"Archivo",sans-serif;font-stretch:85%}
+.match.dim{opacity:.18;filter:grayscale(.6)}
+.match.hit{border-color:var(--gold-2);box-shadow:0 0 0 1px var(--gold-2)}
+
+/* ---------- LLAVES ---------- */
+.copa{margin-top:46px}
+.copa-title{
+  display:inline-block;font-family:"Archivo",sans-serif;font-stretch:80%;font-weight:900;
+  text-transform:uppercase;font-size:1.35rem;letter-spacing:.06em;
+  padding:8px 20px;border-radius:6px;margin-bottom:6px;
+}
+.copa-oro .copa-title{background:linear-gradient(100deg,var(--gold-1),var(--gold-2));color:var(--pine-deep)}
+.copa-plata .copa-title{background:linear-gradient(100deg,#DDE7E3,#9FB6AE);color:var(--pine-deep)}
+.copa .note{color:var(--mint);font-size:.9rem;margin-bottom:18px}
+.bracket-row{margin-bottom:22px}
+.bracket-row h4{
+  font-family:"Archivo",sans-serif;font-stretch:85%;font-weight:800;text-transform:uppercase;
+  letter-spacing:.2em;font-size:.8rem;color:var(--mint);margin-bottom:10px;
+}
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+.slot{
+  background:var(--pine-soft);border:1px dashed rgba(217,169,63,.4);border-radius:8px;
+  padding:10px 14px;display:flex;align-items:center;gap:12px;
+}
+.copa-plata .slot{border-color:rgba(169,206,194,.4)}
+.slot .cn{font-family:"Archivo",sans-serif;font-weight:900;font-size:1.2rem;color:var(--gold-1)}
+.copa-plata .slot .cn{color:var(--mint-strong)}
+.slot .who{font-size:.9rem;color:var(--mint-strong)}
+.slot .who em{display:block;font-style:normal;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mint);opacity:.8}
+
+footer{border-top:1px solid var(--line);text-align:center;padding:34px 20px;color:var(--mint);font-size:.85rem}
+footer .display{color:var(--gold-2);letter-spacing:.24em;font-size:.75rem}
+
+@media (max-width:520px){
+  .badge{width:132px;height:132px}
+  .matches{grid-template-columns:1fr}
+  .hero-meta{gap:14px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .match{transition:border-color .15s, transform .15s}
+  .match:hover{transform:translateY(-2px)}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="badge">
+    <img src="logo-olimpiadas-cid-campeador.png" alt="Olimpiadas Cid Campeador 10 años">
+  </div>
+  <p class="eyebrow">Olimpiadas Cid Campeador · 10 años</p>
+  <h1 class="display">Handball</h1>
+  <p class="subtitle">Menores · Fixture completo</p>
+  <div class="hero-meta">
+    <span><strong>9</strong> equipos</span>
+    <span><strong>2</strong> grupos</span>
+    <span><strong>3</strong> canchas</span>
+    <span><strong>7</strong> turnos</span>
+    <span><strong>16</strong> partidos de grupos</span>
+  </div>
+</header>
+
+<div class="toolbar">
+  <div class="toolbar-inner">
+    <label for="teamFilter">Ver equipo</label>
+    <select id="teamFilter">
+      <option value="">Todos los equipos</option>
+    </select>
+    <nav class="jump" aria-label="Secciones">
+      <a href="#grupos">Grupos</a>
+      <a href="#fase-grupos">Fase de grupos</a>
+      <a href="#fase-final">Fase final</a>
+    </nav>
+  </div>
+</div>
+
+<main>
+
+<section id="grupos">
+  <div class="section-head">
+    <h2>Grupos</h2>
+    <span class="when">Clasifican a semifinales los dos primeros de cada grupo, con cruces 1°A–2°B y 1°B–2°A</span>
+  </div>
+  <div class="groups" id="groupsGrid"></div>
+</section>
+
+<section id="fase-grupos">
+  <div class="section-head">
+    <h2>Fase de grupos</h2>
+    <span class="when">11:00 a 12:24 hs · 7 turnos de 12 min (2x5)</span>
+  </div>
+  <div id="fechas"></div>
+</section>
+
+<section id="fase-final" class="copa copa-oro">
+  <span class="copa-title">Fase final</span>
+  <p class="note">Eliminatorias de 2x7 con definición por penales si hay empate. Cruces: 1° Grupo A vs 2° Grupo B y 1° Grupo B vs 2° Grupo A. Todo termina 13:00.</p>
+
+  <div class="bracket-row">
+    <h4>Semifinales · 12:24</h4>
+    <div class="slots">
+      <div class="slot"><span class="cn">1</span><span class="who"><em>Semifinal 1</em>1° Grupo A vs 2° Grupo B</span></div>
+      <div class="slot"><span class="cn">2</span><span class="who"><em>Semifinal 2</em>1° Grupo B vs 2° Grupo A</span></div>
+    </div>
+  </div>
+  <div class="bracket-row">
+    <h4>Final y 3er puesto · 12:42</h4>
+    <div class="slots">
+      <div class="slot"><span class="cn">1</span><span class="who"><em>Final</em>Ganadores de semifinales</span></div>
+      <div class="slot"><span class="cn">2</span><span class="who"><em>3er puesto</em>Perdedores de semifinales</span></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p class="display">Olimpiadas Cid Campeador · 2026</p>
+  <p>Fixture de handball menores · El número indica la cancha de cada partido.</p>
+</footer>
+
+<script>
+const GRUPOS = {
+  "Grupo A": ["CARAHUE","CHAMPAQUI","CHOROY","LLAHUE","ROSARIO"],
+  "Grupo B": ["CHAPELCO","CURA","MAVUL","LETARE"]
+};
+
+const TURNOS = {1:"11:00",2:"11:12",3:"11:24",4:"11:36",5:"11:48",6:"12:00",7:"12:12"};
+
+/* [turno, grupo, cancha, equipo1, equipo2] — 3 canchas ocupadas en cada turno */
+const PARTIDOS = [
+  /* Turno 1 — 11:00 */
+  [1,"A",1,"LLAHUE","ROSARIO"],
+  [1,"A",2,"CHOROY","CARAHUE"],
+
+  /* Turno 2 — 11:12 */
+  [2,"A",1,"CHAMPAQUI","ROSARIO"],
+  [2,"B",2,"CHAPELCO","CURA"],
+  [2,"B",3,"MAVUL","LETARE"],
+
+  /* Turno 3 — 11:24 */
+  [3,"A",1,"CHAMPAQUI","CHOROY"],
+  [3,"A",2,"CARAHUE","LLAHUE"],
+
+  /* Turno 4 — 11:36 */
+  [4,"B",1,"CHAPELCO","MAVUL"],
+  [4,"B",2,"CURA","LETARE"],
+
+  /* Turno 5 — 11:48 */
+  [5,"A",1,"ROSARIO","CHOROY"],
+  [5,"A",2,"CARAHUE","CHAMPAQUI"],
+
+  /* Turno 6 — 12:00 */
+  [6,"A",1,"CHOROY","LLAHUE"],
+  [6,"B",2,"CHAPELCO","LETARE"],
+  [6,"B",3,"CURA","MAVUL"],
+
+  /* Turno 7 — 12:12 */
+  [7,"A",1,"LLAHUE","CHAMPAQUI"],
+  [7,"A",2,"ROSARIO","CARAHUE"]
+];
+
+/* Grupos */
+const groupsGrid = document.getElementById('groupsGrid');
+for (const [g, teams] of Object.entries(GRUPOS)) {
+  const card = document.createElement('div');
+  card.className = 'group-card';
+  card.innerHTML = `<h3>${g}</h3><ul>${teams.map(t=>`<li>${t}</li>`).join('')}</ul>`;
+  groupsGrid.appendChild(card);
+}
+
+/* Turnos */
+const fechasEl = document.getElementById('fechas');
+for (const t of [1,2,3,4,5,6,7]) {
+  const block = document.createElement('div');
+  block.className = 'fecha-block';
+  const matches = PARTIDOS.filter(p=>p[0]===t).sort((a,b)=>a[2]-b[2]);
+  block.innerHTML = `<h3>Turno ${t} · ${TURNOS[t]} hs</h3>
+    <div class="matches">
+      ${matches.map(([,g,c,t1,t2])=>`
+        <div class="match" data-teams="${t1}|${t2}">
+          <div class="cancha"><span class="n">${c}</span><span class="lbl">Cancha</span></div>
+          <div class="teams">
+            <span class="t">${t1}</span>
+            <span class="vs">vs</span>
+            <span class="t">${t2}</span>
+          </div>
+          <div class="grp-tag">Grupo ${g}</div>
+        </div>`).join('')}
+    </div>`;
+  fechasEl.appendChild(block);
+}
+
+/* Filtro por equipo */
+const select = document.getElementById('teamFilter');
+[...new Set(PARTIDOS.flatMap(p=>[p[3],p[4]]))].sort().forEach(t=>{
+  const o = document.createElement('option');
+  o.value = t; o.textContent = t;
+  select.appendChild(o);
+});
+select.addEventListener('change', ()=>{
+  const t = select.value;
+  document.querySelectorAll('.match').forEach(m=>{
+    const teams = m.dataset.teams.split('|');
+    m.classList.remove('dim','hit');
+    if (t) m.classList.add(teams.includes(t) ? 'hit' : 'dim');
+  });
+});
+</script>
+</body>
+</html>
